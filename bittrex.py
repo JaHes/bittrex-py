@@ -65,11 +65,11 @@ class Bittrex(object):
     def ticker(self, market):
         return self.__run('getticker', {'market': market})
 
-    def marketsummaries(self):
-        return self.__run('getmarketsummaries')
-
-    def marketsummary(self, market):
-        return self.__run('getmarketsummary', {'market': market})
+    def marketsummary(self, market=None):
+        if market is None:
+            return self.__run('getmarketsummaries')
+        else:
+            return self.__run('getmarketsummary', {'market': market})
 
     def orderbook(self, market, type_, depth=20):
         return self.__run('getorderbook', {'market': market, 'type': type_, 'depth': depth})
@@ -94,11 +94,11 @@ class Bittrex(object):
             return self.__run('getopenorders', {'market': market})
 
     #Account 
-    def balances(self):
-        return self.__run('getbalances')
-
-    def balance(self, currency):
-        return self.__run('getbalance', {'currency': currency})
+    def balance(self, currency=None):
+        if currency is None:
+            return self.__run('getbalances')
+        else:
+            return self.__run('getbalance', {'currency': currency})
 
     def depositaddress(self, currency):
         return self.__run('getdepositaddress', {'currency': currency})
