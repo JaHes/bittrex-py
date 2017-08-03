@@ -1,5 +1,5 @@
 # bittrex-py
-A simple Python module for the Bittrex Exchange API (v1.1).
+A simple Python wrapper for the Bittrex Exchange API (v1.1).
 
 ## Usage
 Download bittrex.py and place it either with the script you intend to use it with, or in the Python Lib directory.  
@@ -55,7 +55,7 @@ parameter|required|description
 ---|---|:---
 market | required | A string literal for the market (eg: 'btc-eth').
 
-**.orderbook('market', 'type', 'depth')**  
+**.orderbook('market', 'type')**  
 Used to get the orderbook for a given market.  
 *Parameters:*  
 
@@ -63,7 +63,6 @@ parameter|required|description
 ---|---|:---
 market | required | A string literal for the market (eg: 'btc-eth').  
 type | required | Buy, sell or both to identify the type of orderbook to return.  
-depth | optional | Defaults to 20. How deep of an order book to retrieve. Max is 50
 
 **.markethistory('market')**  
 Used to get the latest trades that have occured for a specific market.  

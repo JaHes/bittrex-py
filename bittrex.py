@@ -71,8 +71,8 @@ class Bittrex(object):
         else:
             return self.__run('getmarketsummary', {'market': market})
 
-    def orderbook(self, market, type_, depth=20):
-        return self.__run('getorderbook', {'market': market, 'type': type_, 'depth': depth})
+    def orderbook(self, market, type_):
+        return self.__run('getorderbook', {'market': market, 'type': type_})
 
     def markethistory(self, market):
         return self.__run('getmarkethistory', {'market': market})
