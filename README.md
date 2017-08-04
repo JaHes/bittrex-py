@@ -43,7 +43,7 @@ parameter|required|description
 market | required | A string literal for the market (eg: 'btc-eth').
 
 **.marketsummary('market')**  
-Used to get the last 24 hour summary for a given market. A specific market can be requested.  
+Used to get the last 24 hour market summary. A specific market can be requested.  
 *Parameters:*  
 
 parameter|required|description
@@ -110,7 +110,7 @@ market | required | A string literal for the market (eg: 'btc-eth').
 Make sure you have the proper permissions set on your API keys for these to work. 
 
 **.balance('currency')**  
-Used to retrieve the balance from your account for a specific currency. A specific currency can be requested.  
+Used to retrieve the balance from your account. A specific currency can be requested.  
 *Parameters:*
 
 parameter|required|description
