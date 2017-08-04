@@ -42,18 +42,13 @@ parameter|required|description
 ---|---|:---
 market | required | A string literal for the market (eg: 'btc-eth').
 
-**.marketsummaries()**  
-Used to get the last 24 hour summary of all active markets.  
-*Parameters:*  
-None
-
 **.marketsummary('market')**  
-Used to get the last 24 hour summary for a given market.  
+Used to get the last 24 hour summary for a given market. A specific market can be requested.  
 *Parameters:*  
 
 parameter|required|description
 ---|---|:---
-market | required | A string literal for the market (eg: 'btc-eth').
+market | optional | A string literal for the market (eg: 'btc-eth'). If ommited, will return for all markets.
 
 **.orderbook('market', 'type')**  
 Used to get the orderbook for a given market.  
@@ -114,18 +109,13 @@ market | required | A string literal for the market (eg: 'btc-eth').
 ## Account API methods (API key and secret are needed)
 Make sure you have the proper permissions set on your API keys for these to work. 
 
-**.balances()**  
-Used to retrieve all balances from your account.  
-*Parameters:*  
-None
-
 **.balance('currency')**  
-Used to retrieve the balance from your account for a specific currency.
+Used to retrieve the balance from your account for a specific currency. A specific currency can be requested.  
 *Parameters:*
 
 parameter|required|description
 ---|---|:---
-currency | required | A string literal for the currency (eg: 'btc').
+currency | optional | A string literal for the currency (eg: 'btc'). If ommited, will return for all currencies.
 
 **.depositaddress('currency')**  
 Used to retrieve or generate an address for a specific currency. If one does not exist, the call will fail and return ADDRESS_GENERATING until one is available.  
@@ -160,7 +150,7 @@ Used to retrieve your order history. A specific market can be requested.
 
 parameter|required|description
 ---|---|:---
-market | required | A string literal for the market (eg: 'btc-eth'). If ommited, will return for all markets.
+market | optional | A string literal for the market (eg: 'btc-eth'). If ommited, will return for all markets.
 
 **.withdrawalhistory('currency')**  
 Used to retrieve your withdrawal history. A specific currency can be requested.  
@@ -168,7 +158,7 @@ Used to retrieve your withdrawal history. A specific currency can be requested.
 
 parameter|required|description
 ---|---|:---
-currency | required | A string literal for the currency (eg: 'btc'). If ommited, will return for all currencies.
+currency | optional | A string literal for the currency (eg: 'btc'). If ommited, will return for all currencies.
 
 **.deposithistory('currency')**  
 Used to retrieve your deposit history. A specific currency can be requested.  
@@ -176,4 +166,4 @@ Used to retrieve your deposit history. A specific currency can be requested.
 
 parameter|required|description
 ---|---|:---
-currency | required | A string literal for the currency (eg: 'btc'). If ommited, will return for all currencies.
+currency | optional | A string literal for the currency (eg: 'btc'). If ommited, will return for all currencies.
