@@ -1,7 +1,7 @@
 import hashlib
 import hmac
 import time
-import urllib
+from urllib.parse import urlencode
 
 import requests
 
@@ -13,7 +13,7 @@ class Bittrex(object):
             self.api_key = api_key
             self.secret = secret
 
-    def __run(self, call, call_type, data=None):
+    def __run(self, call, call_type, data={}):
         if call_type == 'public':
             url = 'https://bittrex.com/api/v1.1/public/'
         elif call_type == 'market':
@@ -23,7 +23,7 @@ class Bittrex(object):
         else:
             return 'Oops'
 
-        url += '{}?{}'.format(call, urllib.parse.urlencode(data))
+        url += '{}?{}'.format(call, urlencode(data))
 
         if call_type != 'public':
             url += '&apikey={}'.format(self.api_key)
