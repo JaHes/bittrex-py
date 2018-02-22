@@ -1,8 +1,10 @@
-import urllib
-import time
-import hmac
 import hashlib
+import hmac
+import time
+import urllib
+
 import requests
+
 
 class Bittrex(object):
 
